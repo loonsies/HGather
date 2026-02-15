@@ -1936,14 +1936,6 @@ ashita.events.register('mouse', 'mouse_cb', function(e)
 
         -- Event: Mouse Wheel Scroll
         [522] = (function()
-           hgather.move.dragging = false;
-
-                e.blocked = true;
-            end
-        end):cond(is_dragging),
-
-        -- Event: Mouse Wheel Scroll
-        [522] = (function()
             if (e.delta < 0) then
                 hgather.settings.opacity[1] = hgather.settings.opacity[1] - 0.125;
             else
