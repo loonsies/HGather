@@ -206,7 +206,7 @@ end
 
 function render_general_config(settings)
     imgui.Text('General Settings');
-    imgui.BeginChild('settings_general', { 0, 285, }, true);
+    imgui.BeginChild('settings_general', { 0, 285, }, ImGuiChildFlags_Borders);
     if (imgui.Checkbox('Visible', hgather.settings.visible)) then
         -- if the checkbox is interacted with, reset the last_attempt
         -- to force the window back open
@@ -241,7 +241,7 @@ function render_general_config(settings)
     imgui.ShowHelp('Toggles whether we reset rewards each time the addon is loaded.');
     imgui.EndChild();
     imgui.Text('Chocobo Digging Display Settings');
-    imgui.BeginChild('dig_general', { 0, 110, }, true);
+    imgui.BeginChild('dig_general', { 0, 110, }, ImGuiChildFlags_Borders);
     -- TODO BUGFIX I don't understand why skill gets reset to 0 sometimes when the config is opened
     imgui.InputFloat('Digging Skill', hgather.settings.digging.dig_skill, 0.1, 0.1, '%.1f');
     imgui.ShowHelp('Current digging skill level.');
@@ -253,7 +253,7 @@ function render_general_config(settings)
     imgui.ShowHelp('Toggles if gysahl greens are automatically subtracted from gil earned.');
     imgui.EndChild();
     imgui.Text('Tool Loss Display Settings');
-    imgui.BeginChild('tool_general', { 0, 90, }, true);
+    imgui.BeginChild('tool_general', { 0, 90, }, ImGuiChildFlags_Borders);
     imgui.Checkbox('Subtract Hatchets', hgather.settings.logging.hatchet_subtract);
     imgui.ShowHelp('Toggles if hatchet breaks are automatically subtracted from gil earned.');
     imgui.Checkbox('Subtract Pickaxes', hgather.settings.mining.pickaxe_subtract);
@@ -265,7 +265,7 @@ end
 
 function render_items_config(settings)
     imgui.Text('Item Settings');
-    imgui.BeginChild('settings_general', { 0, 520, }, true);
+    imgui.BeginChild('settings_general', { 0, 520, }, ImGuiChildFlags_Borders);
 
     imgui.InputInt('Gysahl Cost', hgather.settings.digging.gysahl_cost);
     imgui.ShowHelp('Cost of a single gysahl green.');
